@@ -9,7 +9,7 @@ A small library to extract social profile links from HTML page.
 
 ## Usage
 
-    var social = require('social-link-extractr');
+    var social = require('social-link-extractor');
 
     social.extract("https://www.bca.co.id/")
         .then((result)=>{
