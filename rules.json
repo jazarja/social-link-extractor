@@ -113,7 +113,7 @@
   },
   {
     "name": "steam",
-    "url": "http://steamcommunity.com/id/%s",
+    "url": "https://steamcommunity.com/id/%s",
     "category": [
       "gaming"
     ]
@@ -176,7 +176,7 @@
   },
   {
     "name": "fotolog",
-    "url": "http://www.fotolog.com/%s",
+    "url": "https://www.fotolog.com/%s",
     "category": [
       "photography"
     ]
@@ -309,7 +309,7 @@
   },
   {
     "name": "fanpop",
-    "url": "http://www.fanpop.com/fans/%s",
+    "url": "https://www.fanpop.com/fans/%s",
     "category": [
       "community"
     ]
@@ -365,7 +365,7 @@
   },
   {
     "name": "instructables",
-    "url": "http://www.instructables.com/member/%s",
+    "url": "https://www.instructables.com/member/%s",
     "category": [
       "community"
     ]
@@ -393,7 +393,7 @@
   },
   {
     "name": "kongregate",
-    "url": "http://www.kongregate.com/accounts/%s",
+    "url": "https://www.kongregate.com/accounts/%s",
     "category": [
       "gaming"
     ]
@@ -421,7 +421,7 @@
   },
   {
     "name": "roblox",
-    "url": "http://www.roblox.com/user.aspx?username=%s",
+    "url": "https://www.roblox.com/user.aspx?username=%s",
     "category": [
       "gaming"
     ]
@@ -449,7 +449,7 @@
   },
   {
     "name": "photobucket",
-    "url": "http://smg.photobucket.com/user/%s/library",
+    "url": "https://smg.photobucket.com/user/%s/library",
     "category": [
       "photo"
     ]

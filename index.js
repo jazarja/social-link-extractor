@@ -51,6 +51,22 @@ const extractFromHtml = (html) => {
                         "link" : m[0],
                         "username" : m[1]
                     }
+                } else
+                {
+                    let url = rule.url.replace("https://", "http://");
+
+                    pattern = url.replace(/\./g , "\\.").replace(/\//g , "\\/").replace("%s", "(.*)");
+                    re1 = new RegExp(pattern);
+                    found = re1.test(link);
+                    if (found) {
+                        let m = re1.exec(link);
+                        socialLink = {
+                            "name" : rule.name,
+                            "link" : m[0],
+                            "username" : m[1]
+                        }
+                    }
+
                 }
             });
             return socialLink;
