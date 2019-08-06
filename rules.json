@@ -460,5 +460,12 @@
     "category": [
       "marketplace"
     ]
+  },
+  {
+    "name": "spotify",
+    "url": "https://open.spotify.com/artist/%s",
+    "category": [
+      "music"
+    ]
   }
 ]
