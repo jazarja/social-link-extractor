@@ -94,6 +94,10 @@ module.exports.extract = (url) => {
             .then((result) => {
                 return extractFromHtml(result)
             })
+            .catch((error)=> {
+                console.log("Download error", error.message ? error.message : error);
+                return [];
+            });
     }
 };
 
