@@ -85,7 +85,6 @@ module.exports.parseUrl = parseUrl;
 
 module.exports.extract = (url) => {
     let r = parseUrl(url);
-    console.log(r);
     if (r)
     {
         return Promise.resolve([r]);

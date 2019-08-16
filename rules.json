@@ -28,6 +28,13 @@
     ]
   },
   {
+    "name": "twitter",
+    "url": "https://www.twitter.com/%s",
+    "category": [
+      "social"
+    ]
+  },
+  {
     "name": "vkontakte",
     "url": "https://vk.com/%s",
     "category": [

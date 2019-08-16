@@ -36,4 +36,11 @@ describe('social-link-extractor', () => {
         console.log(JSON.stringify(result,null,4));
         done();
     }).timeout(30000);
+
+    it('should parse twitter link', (done) => {
+        let result = extractor.parseUrl("http://www.twitter.com/carolinemanzo")
+
+        console.log(JSON.stringify(result,null,4));
+        done();
+    }).timeout(30000);
 });
