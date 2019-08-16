@@ -4,8 +4,8 @@ const expect = require('chai').expect;
 const extractor = require('../index');
 
 describe('social-link-extractor', () => {
-    it('should extract traveloka social profile links', (done) => {
-        extractor.extract("https://www.traveloka.com/en/")
+    it('should extract deep social profile links', (done) => {
+        extractor.extract("http://www.mypinkfriday.com/")
             .then((result)=>{
                 console.log(JSON.stringify(result,null,4));
                 expect(result.length).to.equal(4);
@@ -13,8 +13,8 @@ describe('social-link-extractor', () => {
             })
     }).timeout(30000);
 
-    it('should extract bca social profile links', (done) => {
-        extractor.extract("https://www.bca.co.id/")
+    it('should detect social media link', (done) => {
+        extractor.extract("https://www.instagram.com/nickiminaj")
             .then((result)=>{
                 console.log(JSON.stringify(result,null,4));
                 expect(result.length).to.equal(1);
@@ -22,12 +22,11 @@ describe('social-link-extractor', () => {
             })
     }).timeout(30000);
 
-    it('should extract detik social profile links', (done) => {
-        extractor.extract("https://www.detik.com/")
-            .then((result)=>{
+
+    it('should parse tiktok link', (done) => {
+        let result = extractor.parseUrl("https://www.tiktok.com/@omgitsnikefinesse?langCountry=en")
+
                 console.log(JSON.stringify(result,null,4));
-                expect(result.length).to.equal(4);
                 done();
-            })
     }).timeout(30000);
 });

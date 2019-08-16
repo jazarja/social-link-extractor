@@ -467,5 +467,12 @@
     "category": [
       "music"
     ]
+  },
+  {
+    "name" : "tiktok",
+    "url" : "https://www.tiktok.com/@%s[?*]",
+    "category": [
+      "music"
+    ]
   }
 ]

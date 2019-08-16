@@ -25,6 +25,41 @@ const downloadHtml = (url) => {
     return rp(options);
 };
 
+const parseUrl = (link) => {
+    let socialLink = undefined;
+    _.each(rules, (rule)=>{
+        let pattern = rule.url.replace(/\./g , "\\.").replace(/\//g , "\\/").replace("%s", "(.*)");
+        let re1 = new RegExp(pattern);
+        let found = re1.test(link);
+        if (found) {
+            let m = re1.exec(link);
+            socialLink = {
+                "name" : rule.name,
+                "link" : m[0],
+                "username" : m[1]
+            }
+        } else
+        {
+            let url = rule.url.replace("https://", "http://");
+
+            pattern = url.replace(/\./g , "\\.").replace(/\//g , "\\/").replace("%s", "(.*)");
+            re1 = new RegExp(pattern);
+            found = re1.test(link);
+            if (found) {
+                let m = re1.exec(link);
+                socialLink = {
+                    "name" : rule.name,
+                    "link" : m[0],
+                    "username" : m[1]
+                }
+            }
+
+        }
+    });
+
+    return socialLink;
+};
+
 const extractFromHtml = (html) => {
     return new Promise((resolve, reject)=>{
         const $ = cheerio.load(html)
@@ -39,48 +74,27 @@ const extractFromHtml = (html) => {
         resolve(links);
     })
         .map((link)=>{
-            let socialLink = undefined;
-            _.each(rules, (rule)=>{
-                let pattern = rule.url.replace(/\./g , "\\.").replace(/\//g , "\\/").replace("%s", "(.*)");
-                let re1 = new RegExp(pattern);
-                let found = re1.test(link);
-                if (found) {
-                    let m = re1.exec(link);
-                    socialLink = {
-                        "name" : rule.name,
-                        "link" : m[0],
-                        "username" : m[1]
-                    }
-                } else
-                {
-                    let url = rule.url.replace("https://", "http://");
-
-                    pattern = url.replace(/\./g , "\\.").replace(/\//g , "\\/").replace("%s", "(.*)");
-                    re1 = new RegExp(pattern);
-                    found = re1.test(link);
-                    if (found) {
-                        let m = re1.exec(link);
-                        socialLink = {
-                            "name" : rule.name,
-                            "link" : m[0],
-                            "username" : m[1]
-                        }
-                    }
-
-                }
-            });
-            return socialLink;
+            return parseUrl(link);
         })
         .then((result)=>{
             return _.uniqBy(_.compact(result), 'link');
         })
 };
 
+module.exports.parseUrl = parseUrl;
+
 module.exports.extract = (url) => {
-    return downloadHtml(url)
-        .then((result)=>{
-            return extractFromHtml(result)
-        })
+    let r = parseUrl(url);
+    console.log(r);
+    if (r)
+    {
+        return Promise.resolve([r]);
+    } else {
+        return downloadHtml(url)
+            .then((result) => {
+                return extractFromHtml(result)
+            })
+    }
 };
 
 module.exports.extractFromHtml= extractFromHtml;
