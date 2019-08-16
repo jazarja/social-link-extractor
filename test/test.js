@@ -29,4 +29,11 @@ describe('social-link-extractor', () => {
                 console.log(JSON.stringify(result,null,4));
                 done();
     }).timeout(30000);
+
+    it('should parse twitter link', (done) => {
+        let result = extractor.parseUrl("https://twitter.com/celloutfitter?lang=es")
+
+        console.log(JSON.stringify(result,null,4));
+        done();
+    }).timeout(30000);
 });
