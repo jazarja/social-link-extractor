@@ -9,12 +9,12 @@ A small library to extract social profile links from HTML page.
 
 ## Usage
 
-    var social = require('social-link-extractor');
+    const social = require('social-link-extractor');
 
-    social.extract("https://www.bca.co.id/")
-        .then((result)=>{
-            console.log(JSON.stringify(result,null,4));
-        })
+    async ()=>{
+        let result = social.extract("https://www.bca.co.id/");
+        console.log(JSON.stringify(result,null,4));
+    }
     
 ## Tests
 

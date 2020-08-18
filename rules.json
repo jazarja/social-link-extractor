@@ -21,6 +21,13 @@
     ]
   },
   {
+    "name": "snapchat",
+    "url": "https://www.snapchat.com/add/%s",
+    "category": [
+      "social"
+    ]
+  },
+  {
     "name": "twitter",
     "url": "https://twitter.com/%s",
     "category": [
@@ -64,7 +71,17 @@
   },
   {
     "name": "instagram",
+    "url": "https://www.instagram.com/_u/%s",
+    "category": [
+      "social"
+    ]
+  },
+  {
+    "name": "instagram",
     "url": "https://www.instagram.com/%s",
+    "excludes" : [
+      "_u"
+    ],
     "category": [
       "social"
     ]
@@ -72,6 +89,9 @@
   {
     "name": "instagram",
     "url": "https://instagram.com/%s",
+    "excludes" : [
+      "_u"
+    ],
     "category": [
       "social"
     ]
@@ -477,9 +497,86 @@
   },
   {
     "name" : "tiktok",
-    "url" : "https://www.tiktok.com/@%s[?*]",
+    "url" : "https://www.tiktok.com/@%s",
     "category": [
       "music"
+    ]
+  },
+  {
+    "name" : "linktree",
+    "url" : "https://linktr.ee/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "linkfolio",
+    "url" : "https://linkfol.io/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "tap.bio",
+    "url" : "https://tap.bio/@%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "linkin.bio",
+    "url" : "https://linkin.bio/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "campsite",
+    "url" : "https://campsite.bio/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "swipop",
+    "url" : "https://www.swipop.co/@/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "swipop",
+    "url" : "https://swipop.co/@/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "ContactInBio",
+    "url" : "https://allmy.link/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name" : "ContactInBio",
+    "url" : "https://%s.contactin.bio",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name": "bit.ly",
+    "url": "https://bit.ly/%s",
+    "category": [
+      "links"
+    ]
+  },
+  {
+    "name": "shor.by",
+    "url": "https://shor.by/%s",
+    "category": [
+      "links"
     ]
   }
 ]
